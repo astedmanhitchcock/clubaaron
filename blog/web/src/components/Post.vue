@@ -4,8 +4,7 @@
       By <AuthorLink :author="post.author" />
       <div>{{ displayableDate(post.publishDate) }}</div>
     <p class="post__description">{{ post.metaDescription }}</p>
-    <article>
-      {{ post.body }}
+    <article v-html="post.body">
     </article>
     <ul>
       <li class="post__tags" v-for="tag in post.tags" :key="tag.name">

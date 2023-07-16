@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-
+from ckeditor.fields import RichTextField
 
 class Profile(models.Model):
     user = models.OneToOneField(
@@ -28,7 +28,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255, unique=True)
     subtitle = models.CharField(max_length=255, blank=True)
     slug = models.SlugField(max_length=255, unique=True)
-    body = models.TextField()
+    body = RichTextField()
     meta_description = models.CharField(max_length=150, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
@@ -37,3 +37,6 @@ class Post(models.Model):
 
     author = models.ForeignKey(Profile, on_delete=models.PROTECT)
     tags = models.ManyToManyField(Tag, blank=True)
+
+    def __str__(self):
+        return self.title

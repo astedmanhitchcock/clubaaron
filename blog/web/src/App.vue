@@ -1,11 +1,15 @@
 <template>
   <div>
     <header>
-      <router-link to="/">
-        <h1>clubaaron</h1>
-      </router-link>
+      <nav class="flex p-4">
+        <router-link to="/">
+          <h1>clubaaron</h1>
+        </router-link>
+      </nav>
     </header>
-    <router-view />
+    <div class="p-4">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -14,14 +18,3 @@ export default {
   name: 'App',
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

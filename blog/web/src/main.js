@@ -5,6 +5,8 @@ import { createApolloProvider } from '@vue/apollo-option'
 
 import router from '@/router/'
 
+import '@/styles/base.scss'
+
 const cache = new InMemoryCache()
 
 const apolloClient = new ApolloClient({
