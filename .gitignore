@@ -5,5 +5,7 @@ __pycache__/
 venv
 node_modules/
 
-config.py
+.pg_service.conf
+.my_pgpass
+
 app.yaml
