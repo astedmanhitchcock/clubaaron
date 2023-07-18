@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-base-bg
+  }
+
+  h2 {
+    @apply font-sans text-xl font-semibold
+  }
+
+  p {
+    @apply font-serif text-base;
+
+    & + p {
+      @apply mt-6
+    }
+  }
+}
+
+img, video {
+  max-width: 100% !important;
+  height: auto !important;
+}

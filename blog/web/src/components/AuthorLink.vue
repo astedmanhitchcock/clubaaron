@@ -1,6 +1,7 @@
 <template>
   <router-link
     :to="`/author/${author.user.username}`"
+    class="underline text-rose-quartz"
   >
       {{ displayName }}
   </router-link>
