@@ -7,5 +7,6 @@ node_modules/
 
 .pg_service.conf
 .my_pgpass
+clubaaron-gs-credentials.json
 
 app.yaml

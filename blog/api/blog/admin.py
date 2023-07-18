@@ -3,7 +3,7 @@ from django.shortcuts import resolve_url
 from django.contrib.admin.templatetags.admin_urls import admin_urlname
 from django.utils.html import format_html
 
-from blog.models import Profile, Post, Tag
+from blog.models import Profile, Post, Tag, Image
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
@@ -12,6 +12,10 @@ class ProfileAdmin(admin.ModelAdmin):
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
     model = Tag
+
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+    model = Image
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):

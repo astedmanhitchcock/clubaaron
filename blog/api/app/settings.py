@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+from google.oauth2 import service_account
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,3 +138,14 @@ GRAPHENE = {
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = ("http://localhost:8080",)
+
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(os.path.join(BASE_DIR,'clubaaron-gs-credentials.json'))
+
+STORAGES = {
+  "default": {"BACKEND": "storages.backends.gcloud.GoogleCloudStorage"},
+  "staticfiles": {
+      "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+  },
+}
+
+GS_BUCKET_NAME = 'clubaaron-bucket'

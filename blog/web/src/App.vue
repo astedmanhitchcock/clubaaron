@@ -1,11 +1,7 @@
 <template>
   <div>
     <header>
-      <nav class="flex p-4">
-        <router-link to="/">
-          <h1>clubaaron</h1>
-        </router-link>
-      </nav>
+      <BaseNav />
     </header>
     <div class="p-4">
       <router-view />
@@ -14,7 +10,12 @@
 </template>
 
 <script>
+import BaseNav from '@/components/BaseNav.vue'
+
 export default {
   name: 'App',
+  components: {
+    BaseNav
+  }
 }
 </script>
